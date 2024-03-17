@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//version release 0.1.3
+//version release 0.1.4
 
 namespace CSharpRPGBarbaro
 {
@@ -142,6 +142,14 @@ namespace CSharpRPGBarbaro
             Console.ReadLine();
 
             return iJogadaD2;
+        }
+
+        public void statuscombate()
+        {
+            Console.WriteLine($"{Nome}");
+            Console.WriteLine($"Vida: {Vida}/{MaxVida}");
+            Console.WriteLine($"Energia: {Energia}/{MaxEnergia}");
+            Console.WriteLine();
         }
 
         public void status()

@@ -1,6 +1,6 @@
 ﻿using System;
 using static System.Net.Mime.MediaTypeNames;
-//version release 0.1.3
+//version release 0.1.4
 
 namespace CSharpRPGBarbaro
 {
@@ -12,7 +12,7 @@ namespace CSharpRPGBarbaro
             bool bValorValido = true;
 
             Console.WriteLine("Bem vindo ao jogo RPG de combate 1 vs 1!");
-            Console.WriteLine("Versão Release 0.1.3");
+            Console.WriteLine("Versão Release 0.1.4");
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
 
@@ -143,7 +143,7 @@ namespace CSharpRPGBarbaro
                             //Console.WriteLine("**Debug** Got (iRandomNivelOponente == 20) == true"); // Debug
 
                             iNivelOponenteMod = -2;
-                            Console.WriteLine("Sucesso crítico! Nível do oponente +2.");
+                            Console.WriteLine("Sucesso crítico! Nível do oponente -2.");
                         }
                         else if (iRandomNivelOponente < 20 && iRandomNivelOponente > 14)
                         {
@@ -217,6 +217,10 @@ namespace CSharpRPGBarbaro
                             Console.ReadLine();
                             Barbaro1.atacar(Barbaro2, iDificuldadeMult, true);
 
+                            Console.WriteLine();
+                            Barbaro1.statuscombate();
+                            Barbaro2.statuscombate();
+
                             if (Barbaro2.Vida <= 0)
                             {
                                 //Console.WriteLine("**Debug** Got (Barbaro2.Vida <= 0) == true"); // Debug
@@ -241,6 +245,10 @@ namespace CSharpRPGBarbaro
                             Console.ReadLine();
 
                             Barbaro2.atacar(Barbaro1, iDificuldadeMult, false);
+
+                            Console.WriteLine();
+                            Barbaro1.statuscombate();
+                            Barbaro2.statuscombate();
 
                             if (Barbaro1.Vida <= 0)
                             {
@@ -285,6 +293,10 @@ namespace CSharpRPGBarbaro
                                     case "1":
 
                                         Barbaro1.atacar(Barbaro2, iDificuldadeMult, true);
+                                        
+                                        Console.WriteLine();
+                                        Barbaro1.statuscombate();
+                                        Barbaro2.statuscombate();
 
                                         if (Barbaro2.Vida <= 0)
                                         {
@@ -386,7 +398,9 @@ namespace CSharpRPGBarbaro
 
                                     case "3":
 
-                                        Barbaro1.status();
+                                        Console.WriteLine();
+                                        Barbaro1.statuscombate();
+                                        Barbaro2.statuscombate();
 
                                         iTurno = 0;
                                         //Console.WriteLine($"**Debug** iTurno = {iTurno}"); // Debug
@@ -406,6 +420,10 @@ namespace CSharpRPGBarbaro
                                 Console.ReadLine();
 
                                 Barbaro2.atacar(Barbaro1, iDificuldadeMult, false);
+
+                                Console.WriteLine();
+                                Barbaro1.statuscombate();
+                                Barbaro2.statuscombate();
 
                                 if (Barbaro1.Vida <= 0)
                                 {
@@ -454,8 +472,6 @@ namespace CSharpRPGBarbaro
 
                                 break; // Sai do loop se houver uma vitória ou derrota
                             }
-
-                            Console.WriteLine();
                         };
                         break;
 

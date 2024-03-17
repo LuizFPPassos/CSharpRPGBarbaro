@@ -1,6 +1,9 @@
 # CSharpRPGBarbaro
 
 ## Changelog
+### Versão 0.1.4
+- Novo método statuscombate para exibir Vida/MaxVida e Energia/MaxEnergia dos combatentes;
+- README atualizado com um manual de jogo;
 ### Versão 0.1.3
 - Barbaro2.Nome é gerado novamente enquanto ele for = Barbaro1.Nome;
 - Novo método uparinimigo, para corretamente atualizar os stats do Barbaro2 conforme seu nível;
