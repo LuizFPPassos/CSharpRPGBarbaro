@@ -1,6 +1,6 @@
 ﻿using System;
 using static System.Net.Mime.MediaTypeNames;
-//version release 0.1.2
+//version release 0.1.3
 
 namespace CSharpRPGBarbaro
 {
@@ -12,7 +12,7 @@ namespace CSharpRPGBarbaro
             bool bValorValido = true;
 
             Console.WriteLine("Bem vindo ao jogo RPG de combate 1 vs 1!");
-            Console.WriteLine("Versão Release 0.1.2");
+            Console.WriteLine("Versão Release 0.1.3");
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
 
@@ -127,7 +127,10 @@ namespace CSharpRPGBarbaro
 
                         // Gera oponente
                         Barbaro Barbaro2 = new Barbaro();
-                        Barbaro2.gerarnome();
+                        do
+                        {
+                            Barbaro2.gerarnome();
+                        } while (Barbaro2.Nome == Barbaro1.Nome);
 
                         int iRandomNivelOponente = Barbaro1.jogard20(true, iDificuldadeMult);
 
@@ -173,14 +176,26 @@ namespace CSharpRPGBarbaro
 
                         //Console.WriteLine($"**Debug** iNivelOponenteMod = {iNivelOponenteMod}"); // Debug
                         Barbaro2.Nivel = Barbaro1.Nivel + iNivelOponenteMod;
-                        
+
                         if (Barbaro2.Nivel < 1)
                         {
                             //Console.WriteLine("**Debug** Got (Barbaro2.Nivel < 1) == true"); // Debug
                             Barbaro2.Nivel = 1;
+                            Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
                         }
-
-                        //Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
+                        else if (Barbaro2.Nivel > 1)
+                        {
+                            //Console.WriteLine("**Debug** Got (Barbaro2.Nivel > 1) == true"); // Debug
+                            for (int i = 1; i < Barbaro2.Nivel; i++)
+                            {
+                                Barbaro2.uparinimigo();
+                                Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
+                        }
 
                         Console.WriteLine();
                         Console.WriteLine($"{Barbaro1.Nome} se depara com {Barbaro2.Nome}, bárbaro nivel {Barbaro2.Nivel}.");
@@ -417,7 +432,8 @@ namespace CSharpRPGBarbaro
                                     Console.WriteLine($"{Barbaro1.Nome} é vitorioso(a).");
                                     bAllowLevelUp = true;
                                     //Console.WriteLine($"**Debug** bAllowLevelUp == {bAllowLevelUp}"); // Debug
-                                    
+                                    Console.WriteLine($"{Barbaro1.Nome} agora pode subir de nível, acesse '3 - Level Up' no Menu Principal.");
+
                                     iLimiteRevigorar++;
                                     //Console.WriteLine($"**Debug** iLimiteRevigorar == {iLimiteRevigorar}"); // Debug
                                     Console.WriteLine($"{Barbaro1.Nome} adquiriu uma poção.");
@@ -458,7 +474,7 @@ namespace CSharpRPGBarbaro
                         else
                         {
                             //Console.WriteLine("**Debug** Got (bAllowLevelUp) == false"); // Debug
-                            Console.WriteLine($"{Barbaro1.Nome} não pode subir de nível no momento.");
+                            Console.WriteLine($"{Barbaro1.Nome} não pode subir de nível no momento, derrote inimigos para adquirir experiência (1 vitória = 1 nível).");
                         }
 
                         break;
