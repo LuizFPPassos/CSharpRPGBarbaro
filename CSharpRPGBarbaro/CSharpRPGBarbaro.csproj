@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <StartupObject></StartupObject>
+    <ApplicationIcon>CSharpRPGBarbaro.ico</ApplicationIcon>
+    <PackageIcon>CSharpRPGBarbaro.png</PackageIcon>
+    <Copyright>GPL v3</Copyright>
+    <Title>CSharpRPGBarbaro</Title>
+    <Version>0.1.1</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/LuizFPPassos/CSharpRPGBarbaro</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="CSharpRPGBarbaro.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CSharpRPGBarbaro.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
