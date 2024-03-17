@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//version release 0.1
+//version release 0.1.3
 
 namespace CSharpRPGBarbaro
 {
@@ -162,10 +162,11 @@ namespace CSharpRPGBarbaro
             Nivel++;
             Forca = Forca + 5;
             Vitalidade = Vitalidade + 3;
-            Energia = Energia + 2;
+            Energia = Energia + 2; // Seria "MaxEnergia = Energia + 2;" ???
             Inteligencia = Inteligencia + 1;
             Destreza = Destreza + 2;
             MaxVida = Vitalidade * 3 / 2;
+            // Talvez "Vida = MaxVida;" e "Energia = MaxEnergia;" ???
             Console.WriteLine($"{Nome} ascendeu para o nível {Nivel}.");
             Console.WriteLine($"Vida: {Vida}/{MaxVida}");
             Console.WriteLine($"Energia: {Energia}/{MaxEnergia}");
@@ -173,6 +174,25 @@ namespace CSharpRPGBarbaro
             Console.WriteLine($"Força: {Forca}");
             Console.WriteLine($"Destreza: {Destreza}");
             Console.WriteLine($"Inteligência: {Inteligencia}");
+        }
+
+        public void uparinimigo()
+        {
+            Forca = Forca + 5;
+            Vitalidade = Vitalidade + 3;
+            Energia = Energia + 2; // Seria "MaxEnergia = Energia + 2;" ???
+            Inteligencia = Inteligencia + 1;
+            Destreza = Destreza + 2;
+            MaxVida = Vitalidade * 3 / 2;
+            Vida = MaxVida;
+            // "Energia = MaxEnergia;" ???
+            Console.WriteLine($"**Debug** {Nome} ascendeu para o nível {Nivel}.");
+            Console.WriteLine($"**Debug** Vida: {Vida}/{MaxVida}");
+            Console.WriteLine($"**Debug** Energia: {Energia}/{MaxEnergia}");
+            Console.WriteLine($"**Debug** Vitalidade: {Vitalidade}");
+            Console.WriteLine($"**Debug** Força: {Forca}");
+            Console.WriteLine($"**Debug** Destreza: {Destreza}");
+            Console.WriteLine($"**Debug** Inteligência: {Inteligencia}");
         }
 
         public void revigorar(int valor)
