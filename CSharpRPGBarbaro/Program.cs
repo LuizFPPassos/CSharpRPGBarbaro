@@ -181,7 +181,7 @@ namespace CSharpRPGBarbaro
                         {
                             //Console.WriteLine("**Debug** Got (Barbaro2.Nivel < 1) == true"); // Debug
                             Barbaro2.Nivel = 1;
-                            Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
+                            //Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
                         }
                         else if (Barbaro2.Nivel > 1)
                         {
@@ -189,12 +189,12 @@ namespace CSharpRPGBarbaro
                             for (int i = 1; i < Barbaro2.Nivel; i++)
                             {
                                 Barbaro2.uparinimigo();
-                                Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
+                                //Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
                             }
                         }
                         else
                         {
-                            Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
+                            //Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
                         }
 
                         Console.WriteLine();

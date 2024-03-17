@@ -186,13 +186,13 @@ namespace CSharpRPGBarbaro
             MaxVida = Vitalidade * 3 / 2;
             Vida = MaxVida;
             // "Energia = MaxEnergia;" ???
-            Console.WriteLine($"**Debug** {Nome} ascendeu para o nível {Nivel}.");
-            Console.WriteLine($"**Debug** Vida: {Vida}/{MaxVida}");
-            Console.WriteLine($"**Debug** Energia: {Energia}/{MaxEnergia}");
-            Console.WriteLine($"**Debug** Vitalidade: {Vitalidade}");
-            Console.WriteLine($"**Debug** Força: {Forca}");
-            Console.WriteLine($"**Debug** Destreza: {Destreza}");
-            Console.WriteLine($"**Debug** Inteligência: {Inteligencia}");
+            //Console.WriteLine($"**Debug** {Nome} ascendeu para o nível {Nivel}.");
+            //Console.WriteLine($"**Debug** Vida: {Vida}/{MaxVida}");
+            //Console.WriteLine($"**Debug** Energia: {Energia}/{MaxEnergia}");
+            //Console.WriteLine($"**Debug** Vitalidade: {Vitalidade}");
+            //Console.WriteLine($"**Debug** Força: {Forca}");
+            //Console.WriteLine($"**Debug** Destreza: {Destreza}");
+            //Console.WriteLine($"**Debug** Inteligência: {Inteligencia}");
         }
 
         public void revigorar(int valor)
