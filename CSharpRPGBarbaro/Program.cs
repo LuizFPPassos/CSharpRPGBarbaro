@@ -1,6 +1,6 @@
 ﻿using System;
 using static System.Net.Mime.MediaTypeNames;
-//version release 0.1.1
+//version release 0.1.2
 
 namespace CSharpRPGBarbaro
 {
@@ -12,7 +12,7 @@ namespace CSharpRPGBarbaro
             bool bValorValido = true;
 
             Console.WriteLine("Bem vindo ao jogo RPG de combate 1 vs 1!");
-            Console.WriteLine("Versão Release 0.1.1");
+            Console.WriteLine("Versão Release 0.1.2");
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
 
@@ -173,6 +173,14 @@ namespace CSharpRPGBarbaro
 
                         //Console.WriteLine($"**Debug** iNivelOponenteMod = {iNivelOponenteMod}"); // Debug
                         Barbaro2.Nivel = Barbaro1.Nivel + iNivelOponenteMod;
+                        
+                        if (Barbaro2.Nivel < 1)
+                        {
+                            //Console.WriteLine("**Debug** Got (Barbaro2.Nivel < 1) == true"); // Debug
+                            Barbaro2.Nivel = 1;
+                        }
+
+                        //Console.WriteLine($"**Debug** Barbaro2.Nivel = {Barbaro2.Nivel}"); // Debug
 
                         Console.WriteLine();
                         Console.WriteLine($"{Barbaro1.Nome} se depara com {Barbaro2.Nome}, bárbaro nivel {Barbaro2.Nivel}.");
@@ -295,7 +303,7 @@ namespace CSharpRPGBarbaro
                                             Console.WriteLine($"{Barbaro1.Nome} possui {iLimiteRevigorar} poção(ões).");
                                             do
                                             {
-                                                Console.WriteLine("Digite o valor:");
+                                                Console.WriteLine("Digite a quatidade de poções a usar, ou 0 para cancelar:");
                                                 sValorDigitadoRegivorar = Console.ReadLine();
 
                                                 // Checagem de valor digitado válido
@@ -303,20 +311,21 @@ namespace CSharpRPGBarbaro
                                                 {
                                                     //Console.WriteLine("**Debug** Got (!int.TryParse(sValorDigitadoRegivorar, out iValorDigitadoRevigorar)) == true"); // Debug
 
-                                                    Console.WriteLine("Valor inválido, digite um número inteiro maior que 0.");
+                                                    Console.WriteLine("Valor inválido, digite um número inteiro maior que 0, ou 0 para cancelar.");
                                                     Console.WriteLine();
                                                     bValorValido = false;
                                                     //Console.WriteLine($"**Debug** bValorValido = {bValorValido}"); // Debug
                                                 }
-                                                else if (iValorDigitadoRevigorar <= 0)
+                                                else if (iValorDigitadoRevigorar < 0)
                                                 {
                                                     //Console.WriteLine("**Debug** Got (iValorDigitadoRevigorar < 0) == true"); // Debug
 
-                                                    Console.WriteLine("Valor inválido, digite um número inteiro maior que 0.");
+                                                    Console.WriteLine("Valor inválido, digite um número inteiro maior que 0, ou 0 para cancelar.");
                                                     Console.WriteLine();
                                                     bValorValido = false;
                                                     //Console.WriteLine($"**Debug** bValorValido = {bValorValido}"); // Debug
                                                 }
+
                                                 else if (iValorDigitadoRevigorar > iLimiteRevigorar)
                                                 {
                                                     //Console.WriteLine("**Debug** Got (iValorDigitadoRevigorar > iLimiteRevigorar) == true"); // Debug
@@ -324,6 +333,15 @@ namespace CSharpRPGBarbaro
                                                     Console.WriteLine("Você não possui poções suficientes.");
                                                     Console.WriteLine();
                                                     bValorValido = false;
+                                                    //Console.WriteLine($"**Debug** bValorValido = {bValorValido}"); // Debug
+                                                }
+                                                else if (iValorDigitadoRevigorar == 0)
+                                                {
+                                                    //Console.WriteLine("**Debug** Got (iValorDigitadoRevigorar == 0) == true"); // Debug
+
+                                                    Console.WriteLine("Revigoração abortada.");
+                                                    Console.WriteLine();
+                                                    bValorValido = true;
                                                     //Console.WriteLine($"**Debug** bValorValido = {bValorValido}"); // Debug
                                                 }
                                                 else
@@ -339,10 +357,13 @@ namespace CSharpRPGBarbaro
                                             iValorDigitadoRevigorar = Convert.ToInt32(sValorDigitadoRegivorar);
                                             //Console.WriteLine($"iValorDigitadoRevigorar = {iValorDigitadoRevigorar}"); // Debug
 
-                                            Barbaro1.revigorar(iValorDigitadoRevigorar);
-
-                                            iLimiteRevigorar = iLimiteRevigorar - iValorDigitadoRevigorar;
-                                            //Console.WriteLine($"**Debug** iLimiteRevigorar = {iLimiteRevigorar}"); // Debug
+                                            if (iValorDigitadoRevigorar > 0)
+                                            {
+                                                //Console.WriteLine("**Debug** Got (iValorDigitadoRevigorar > 0) == true"); // Debug
+                                                Barbaro1.revigorar(iValorDigitadoRevigorar);
+                                                iLimiteRevigorar = iLimiteRevigorar - iValorDigitadoRevigorar;
+                                                //Console.WriteLine($"**Debug** iLimiteRevigorar = {iLimiteRevigorar}"); // Debug
+                                            }
                                         }
                                         iTurno = 1;
                                         //Console.WriteLine($"**Debug** iTurno = {iTurno}"); // Debug
@@ -457,7 +478,7 @@ namespace CSharpRPGBarbaro
                             Console.WriteLine($"{Barbaro1.Nome} possui {iLimiteRevigorar} poção(ões).");
                             do
                             {
-                                Console.WriteLine("Digite o valor:");
+                                Console.WriteLine("Digite a quatidade de poções a usar, ou 0 para cancelar:");
                                 sValorDigitadoRegivorarMenu = Console.ReadLine();
                                 //Console.WriteLine($"**Debug** sValorDigitadoRegivorarMenu = {sValorDigitadoRegivorarMenu}"); // Debug
 
@@ -466,16 +487,16 @@ namespace CSharpRPGBarbaro
                                 {
                                     //Console.WriteLine("**Debug** Got (!int.TryParse(sValorDigitadoRegivorarMenu, out iValorDigitadoRevigorarMenu)) == true"); // Debug
 
-                                    Console.WriteLine("Valor inválido, digite um número inteiro maior que 0.");
+                                    Console.WriteLine("Valor inválido, digite um número inteiro maior que 0, ou 0 para cancelar.");
                                     Console.WriteLine();
                                     bValorValido = false;
                                     //Console.WriteLine($"**Debug** bValorValido = {bValorValido}"); // Debug
                                 }
-                                else if (iValorDigitadoRevigorarMenu <= 0)
+                                else if (iValorDigitadoRevigorarMenu < 0)
                                 {
                                     //Console.WriteLine("**Debug** Got (iValorDigitadoRevigorar < 0) == true"); // Debug
 
-                                    Console.WriteLine("Valor inválido, digite um número inteiro maior que 0.");
+                                    Console.WriteLine("Valor inválido, digite um número inteiro maior que 0, ou 0 para cancelar.");
                                     Console.WriteLine();
                                     bValorValido = false;
                                     //Console.WriteLine($"**Debug** bValorValido = {bValorValido}"); // Debug
@@ -487,6 +508,15 @@ namespace CSharpRPGBarbaro
                                     Console.WriteLine("Você não possui poções suficientes.");
                                     Console.WriteLine();
                                     bValorValido = false;
+                                    //Console.WriteLine($"**Debug** bValorValido = {bValorValido}"); // Debug
+                                }
+                                else if (iValorDigitadoRevigorarMenu == 0)
+                                {
+                                    //Console.WriteLine("**Debug** Got (iValorDigitadoRevigorarMenu == 0) == true"); // Debug
+
+                                    Console.WriteLine("Revigoração abortada.");
+                                    Console.WriteLine();
+                                    bValorValido = true;
                                     //Console.WriteLine($"**Debug** bValorValido = {bValorValido}"); // Debug
                                 }
                                 else
@@ -502,10 +532,13 @@ namespace CSharpRPGBarbaro
                             iValorDigitadoRevigorarMenu = Convert.ToInt32(sValorDigitadoRegivorarMenu);
                             //Console.WriteLine($"**Debug** iValorDigitadoRevigorarMenu = {iValorDigitadoRevigorarMenu}"); // Debug
 
-                            Barbaro1.revigorar(iValorDigitadoRevigorarMenu);
-
-                            iLimiteRevigorar = iLimiteRevigorar - iValorDigitadoRevigorarMenu;
-                            //Console.WriteLine($"**Debug** iLimiteRevigorar = {iLimiteRevigorar}"); // Debug
+                            if (iValorDigitadoRevigorarMenu > 0)
+                            {
+                                //Console.WriteLine("**Debug** Got (iValorDigitadoRevigorarMenu > 0) == true"); // Debug
+                                Barbaro1.revigorar(iValorDigitadoRevigorarMenu);
+                                iLimiteRevigorar = iLimiteRevigorar - iValorDigitadoRevigorarMenu;
+                                //Console.WriteLine($"**Debug** iLimiteRevigorar = {iLimiteRevigorar}"); // Debug
+                            } 
                         }
                         break;
 

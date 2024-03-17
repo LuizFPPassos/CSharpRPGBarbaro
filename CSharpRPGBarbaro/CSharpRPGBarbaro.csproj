@@ -10,7 +10,7 @@
     <PackageIcon>CSharpRPGBarbaro.png</PackageIcon>
     <Copyright>GPL v3</Copyright>
     <Title>CSharpRPGBarbaro</Title>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/LuizFPPassos/CSharpRPGBarbaro</RepositoryUrl>
   </PropertyGroup>
@@ -34,6 +34,10 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+	<None Include="..\CHANGELOG.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	</None>
   </ItemGroup>
 
 </Project>
