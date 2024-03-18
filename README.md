@@ -21,7 +21,7 @@ No Menu Principal, o jogador pode escolher:
 4 - Revigorar (O jogador pode consumir poções para Revigorar seu personagem, restaurando sua Vida e Energia.)  
 5 - Sair (Fecha o jogo.)  
   
-Combate  
+**Combate**  
   
 Primeiramente, o jogador joga um D20, que determina o modificador de nível do oponente.  
 - Uma jogada de valor 20 representa um Sucesso crítico, definindo o nível do oponente como Nível do Jogador -2.  
@@ -31,13 +31,15 @@ Primeiramente, o jogador joga um D20, que determina o modificador de nível do o
 - Uma jogada de valor 0 representa um Fracasso crítico, definindo o nível do oponente como Nível do Jogador +2.  
   
 Após isso, o jogador joga um D2 (uma moeda), e caso o resultado seja 0, o primeiro turno é do jogador, e caso seja 1, o primeiro turno é do oponente.  
+  
 O primeiro turno sempre inicia com um ataque, no qual o jogador ou inimigo jogam um D20, que define o multiplicador de ataque, que vai de 0 a 1.  
+  
 Em seu turno (a partir do segundo turno), o jogador tem as seguintes opções:  
 1 - Atacar (prossegue com o próximo ataque.)  
 2 - Revigorar (exibe o menu revigorar, no qual o jogador pode consumir poções para restaurar sua Vida e Energia.)  
 3 - Status (exibe Vida/MaxVida e Energia/MaxEnergia de ambos os personagens.)  
   
-O combate termina quando a Vida de um dos personagens chegar a 0.  
-O jogador então adquire experiência suficiente para subir o nível de ser personagem em +1 (realizado no menu Level Up do Menu Principal), além de adquirir também +1 poção.  
-Recomenda-se Revigorar o personagem antes de adentrar um novo combate, caso sua Vida e Energia tenham sido danificadas no último combate, e o jogador possua poções disponíveis.  
-Caso o jogador seja derrotado, o jogo é finalizado (Game Over).  
+- O combate termina quando a Vida de um dos personagens chegar a 0.  
+- O jogador então adquire experiência suficiente para subir o nível de ser personagem em +1 (realizado no menu Level Up do Menu Principal), além de adquirir também +1 poção.  
+- Recomenda-se Revigorar o personagem antes de adentrar um novo combate, caso sua Vida e Energia tenham sido danificadas no último combate, e o jogador possua poções disponíveis.  
+- Caso o jogador seja derrotado, o jogo é finalizado (Game Over).  
