@@ -1,6 +1,8 @@
 # CSharpRPGBarbaro
 
 ## Changelog
+### Versão 0.1.5
+- FIX: Jogada de D20 para determinar o Nível do oponente agora corretamente checa valores de 1 a 20;
 ### Versão 0.1.4
 - Novo método statuscombate para exibir Vida/MaxVida e Energia/MaxEnergia dos combatentes;
 - README atualizado com um manual de jogo;

@@ -1,5 +1,5 @@
 # CSharpRPGBarbaro
-## Versão 0.1.4
+## Versão 0.1.5
 Atividade proposta da disciplina Programação Orientada a Objetos I, do curso de Análise e Desenvolvimento de Sistemas da UNIP - Ribeirão Preto.
 Criação de uma classe "Barbaro" em C#, com atributos e métodos especificados.
 Posteriormente ampliado para um jogo funcional de combate 1 vs 1 (Player vs AI) em turnos, incluindo sistema de D20 e D2, além de 3 níveis de dificuldade.
@@ -26,9 +26,9 @@ No Menu Principal, o jogador pode escolher:
 Primeiramente, o jogador joga um D20, que determina o modificador de nível do oponente.  
 - Uma jogada de valor 20 representa um Sucesso crítico, definindo o nível do oponente como Nível do Jogador -2.  
 - Uma jogada de valor entre 19 e 15 representa um Sucesso, definindo o nível do oponente como Nível do Jogador -1.  
-- Uma jogada de valor entre 14 e 6 representa uma jogada neutra, definindo o nível do oponente como igual ao Nível do Jogador.  
-- Uma jogada de valor entre 5 e 1 representa um Fracasso, definindo o nível do oponente como Nível do Jogador +1.  
-- Uma jogada de valor 0 representa um Fracasso crítico, definindo o nível do oponente como Nível do Jogador +2.  
+- Uma jogada de valor entre 14 e 7 representa uma jogada neutra, definindo o nível do oponente como igual ao Nível do Jogador.  
+- Uma jogada de valor entre 6 e 2 representa um Fracasso, definindo o nível do oponente como Nível do Jogador +1.  
+- Uma jogada de valor 1 representa um Fracasso crítico, definindo o nível do oponente como Nível do Jogador +2.  
   
 Após isso, o jogador joga um D2 (uma moeda), e caso o resultado seja 0, o primeiro turno é do jogador, e caso seja 1, o primeiro turno é do oponente.  
   

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//version release 0.1.4
+//version release 0.1.5
 
 namespace CSharpRPGBarbaro
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 using static System.Net.Mime.MediaTypeNames;
-//version release 0.1.4
+//version release 0.1.5
 
 namespace CSharpRPGBarbaro
 {
@@ -12,7 +12,7 @@ namespace CSharpRPGBarbaro
             bool bValorValido = true;
 
             Console.WriteLine("Bem vindo ao jogo RPG de combate 1 vs 1!");
-            Console.WriteLine("Versão Release 0.1.4");
+            Console.WriteLine("Versão Release 0.1.5");
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
 
@@ -145,28 +145,28 @@ namespace CSharpRPGBarbaro
                             iNivelOponenteMod = -2;
                             Console.WriteLine("Sucesso crítico! Nível do oponente -2.");
                         }
-                        else if (iRandomNivelOponente < 20 && iRandomNivelOponente > 14)
+                        else if (iRandomNivelOponente <= 19 && iRandomNivelOponente >= 15)
                         {
                             //Console.WriteLine("**Debug** Got (iRandomNivelOponente < 20 && iRandomNivelOponente > 14) == true"); // Debug
 
                             iNivelOponenteMod = -1;
                             Console.WriteLine("Sucesso! Nível do oponente -1.");
                         }
-                        else if (iRandomNivelOponente >= 6 && iRandomNivelOponente <= 14)
+                        else if (iRandomNivelOponente >= 7 && iRandomNivelOponente <= 14)
                         {
                             //Console.WriteLine("**Debug** Got (iRandomNivelOponente >= 6 && iRandomNivelOponente <= 14) == true"); // Debug
 
                             Console.WriteLine("Jogada neutra, nível do oponente +0.");
                             iNivelOponenteMod = 0;
                         }
-                        else if (iRandomNivelOponente < 6 && iRandomNivelOponente > 0)
+                        else if (iRandomNivelOponente <= 6 && iRandomNivelOponente >= 2)
                         {
                             //Console.WriteLine("**Debug** Got (iRandomNivelOponente < 6 && iRandomNivelOponente > 0) == true"); // Debug
 
                             iNivelOponenteMod = +1;
                             Console.WriteLine("Fracasso! Nível do oponente +1.");
                         }
-                        else if (iRandomNivelOponente == 0)
+                        else if (iRandomNivelOponente == 1)
                         {
                             //Console.WriteLine("**Debug** Got (iRandomNivelOponente == 0) == true"); // Debug
 
